@@ -10,7 +10,7 @@
         <span style="font-size: 14pt; color: darkgreen;">Помощник флориста, можно без опыта работы, принимаем студентов</span></td></tr>
     <tr><td colspan="3" align="left" class="textsite">
         <span style="font-size: 14pt; color: darkgreen;">Система оплаты - сдельно-премиальная. Срок стажировки 2-4 недели. График работы договорной.<br /><br />
-    Обращаться по т. 296-99-61.</span>
+    Обращаться по т. 256-02-46</span>
     </td></tr>
     </table>
 </asp:Content>
