@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="Цветочные композиции" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CompositionsMiscellaneous.aspx.cs" Inherits="CompositionsMiscellaneous" %>
-
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<script type="text/javascript">
+    $(function () {
+        $('.gallery_modal').lightBox();
+    });
+</script></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <h1 style="color:Green; font-size:110%; margin-bottom:5px;">Цветочные композиции:</h1>
 
@@ -12,7 +17,7 @@
                     </td></tr>
                     <tr>
                     <td valign="top" align="center">
-                        <a href="#" onclick='<%# "javascript:OpenBigImage(\"" +  Eval("ItemID").ToString() + "\")" %>'><asp:Image ID="Image1" AlternateText="Цветочная композиция" CssClass="ImagesItemsClass" ImageUrl='<%# GetImageUrl(Eval("ImageName").ToString()) %>' runat="server" /></a>
+                        <a href='<%# Utils.GetFullImageUrl("CompositionsMiscellaneous", Eval("ItemID").ToString())%>' class="gallery_modal" title="Разное № <%# Eval("number") %>. Цена - <%# Eval("Cost") %> руб."><asp:Image ID="Image1" AlternateText="Цветочная композиция" CssClass="ImagesItemsClass" ImageUrl='<%# GetImageUrl(Eval("ImageName").ToString()) %>' runat="server" /></a>
                     </td>
                     </tr>
                     <tr><td align="center" style="text-align:center;">

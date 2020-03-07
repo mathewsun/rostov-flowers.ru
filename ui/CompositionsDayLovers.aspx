@@ -1,7 +1,12 @@
-﻿<%@ Page Title="Ко дню Влюблённых" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CompositionsDayLovers.aspx.cs" Inherits="CompositionsDayLovers" %>
-
+﻿<%@ Page Title="К 8 Марта" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CompositionsDayLovers.aspx.cs" Inherits="CompositionsDayLovers" %>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<script type="text/javascript">
+    $(function () {
+        $('.gallery_modal').lightBox();
+    });
+</script></asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<h1 style="color:Green; font-size:110%; margin-bottom:5px;">Ко дню Влюблённых:</h1>
+<h1 style="color:Green; font-size:110%; margin-bottom:5px;">К 8 Марта:</h1>
 <table border="0" cellpadding="0" cellspacing="0"><tr><td style="width:594px;">
 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" EnableViewState="False" RepeatColumns="5" RepeatDirection="Horizontal" ShowHeader="False">
     <ItemTemplate>
@@ -12,7 +17,7 @@
                     </td></tr>
                     <tr>
                     <td valign="top" align="center">
-                        <a href="#" onclick='<%# "javascript:OpenBigImage(\"" +  Eval("ItemID").ToString() + "\")" %>'><asp:Image ID="Image1" CssClass="ImagesItemsClass" ImageUrl='<%# GetImageUrl(Eval("ImageName").ToString()) %>' runat="server" /></a>
+                        <a href='<%# Utils.GetFullImageUrl("CompositionsTrees", Eval("ItemID").ToString())%>' class="gallery_modal" title="К 8 марта № <%# Eval("number") %>. Цена - <%# Eval("Cost") %> руб."><asp:Image ID="Image1" CssClass="ImagesItemsClass" ImageUrl='<%# GetImageUrl(Eval("ImageName").ToString()) %>' runat="server" /></a>
                     </td>
                     </tr>
                     <tr><td align="center" style="text-align:center;">
